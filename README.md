@@ -17,3 +17,10 @@ git clone https://github.com/heroseloi/docker-java-apples.git
 cd docker-java-apples
 chmod +x run.sh
 ./run.sh
+```
+
+Then connect to the desktop using your VNC client:
+
+```bash
+localhost:5901
+```

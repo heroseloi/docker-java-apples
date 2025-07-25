@@ -1,7 +1,9 @@
 # docker-java-apples
+
 A lightweight Docker container with XFCE, VNC, Firefox 52 ESR, and Java plugin support for running legacy Java applets.
 
-This project provides a ready-to-use Docker container based on Ubuntu 18.04 with a lightweight XFCE desktop environment accessible via VNC. It includes Firefox 52 ESR—one of the last versions supporting NPAPI plugins—alongside Java 8 and the necessary plugin integration to enable legacy Java applet support. Designed for testing and accessing older web applications that depend on Java applets, this container offers a convenient, isolated environment that runs independently of the host system’s browser or Java configuration.
+This project makes it easy to access old-school Java-based tools like IPMI, iDRAC, and other remote KVM consoles. It runs an Ubuntu 18.04 desktop with Firefox 52 ESR (the last version to support NPAPI plugins) and Java 8, all inside a VNC-accessible container—so you don’t have to mess with your host setup.
+
 
 Dependencies:
 

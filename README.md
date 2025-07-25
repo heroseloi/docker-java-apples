@@ -8,6 +8,12 @@ This project makes it easy to access old-school Java-based tools like IPMI, iDRA
 Dependencies:
 
 You must have docker installed at your end.
+
 It was built using Docker Desktop 4.40.0 (187762) for Mac.
 
 How to use:
+
+# git clone https://github.com/heroseloi/docker-java-apples.git
+# cd docker-java-apples.git
+# chmod +x run.sh
+# ./run.sh

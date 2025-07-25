@@ -24,3 +24,19 @@ Then connect to the desktop using your VNC client:
 ```bash
 localhost:5901
 ```
+
+**Password: docker**
+
+Features
+Ubuntu 18.04 base
+XFCE lightweight desktop
+VNC server for remote GUI access
+Firefox 52 ESR with NPAPI support
+Java 8 with browser plugin (libnpjp2.so)
+Custom desktop shortcut for easy access
+
+Notes
+Designed mainly for legacy tools like KVM/IPMI/iDRAC consoles that still use Java applets.
+
+Uses Firefox 52 ESR – the last version with full Java NPAPI plugin support.
+Tested on macOS with Docker Desktop and RealVNC client.

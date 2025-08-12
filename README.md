@@ -8,7 +8,6 @@ This project makes it easy to access old-school Java-based tools like **IPMI**, 
 
 ![Legacy Java Applet in Firefox 45 ESR](screenshot.png)
 -
-![Legacy Java Applet in Firefox 45 ESR](screenshot.png)
 
 ## Quick Start
 

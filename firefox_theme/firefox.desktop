@@ -1,10 +1,10 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=Firefox 52 ESR
+Name=Firefox 45
 Comment=Legacy Java-compatible Firefox
-Exec=/home/docker/firefox52/firefox
+Exec=/home/docker/firefox45/firefox
 Icon=/home/docker/.icons/firefox.png
 Terminal=false
 Categories=Network;WebBrowser;
-Path=/home/docker/firefox52
+Path=/home/docker/firefox45

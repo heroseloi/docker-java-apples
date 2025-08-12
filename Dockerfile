@@ -11,20 +11,25 @@ RUN apt-get update && apt-get install -y \
     build-essential autoconf automake libtool pkg-config \
     && apt-get clean
 
-
-RUN mkdir ~/build-socat && cd ~/build-socat
-
 RUN apt-get purge -y gvfs gvfs-backends gvfs-daemons
 
 # Create a user
 RUN useradd -s /bin/bash -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
 
+# Setup Java env
+RUN echo "PATH=\"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/tmp/jdk1.8.0_202/bin/\"" > /etc/environment
+RUN echo "MOZ_PLUGIN_PATH=/home/docker/.mozilla/plugins" >> /etc/environment
+
+RUN mkdir -p /home/docker/.java/deployment /home/docker/.java/deployment/security/
+COPY java_config/deployment.properties /home/docker/.java/deployment/
+COPY java_config/exception.sites /home/docker/.java/deployment/security/
+
 RUN touch /home/docker/.Xauthority && chown docker:docker /home/docker/.Xauthority
 
 # Create Firefox shotcut
 RUN mkdir /home/docker/.icons/ /home/docker/Desktop
-COPY firefox.desktop /home/docker/Desktop
-COPY firefox.png /home/docker/.icons/
+COPY firefox_theme/firefox.desktop /home/docker/Desktop
+COPY firefox_theme/firefox.png /home/docker/.icons/
 RUN chown -R docker:docker /home/docker/ \
     && chmod +x /home/docker/Desktop/firefox.desktop
 
@@ -40,15 +45,20 @@ RUN mkdir -p /home/docker/.vnc && \
     chmod +x /home/docker/.vnc/xstartup
 
 # Download and install Firefox 52 ESR manually
-RUN mkdir -p /home/docker/firefox52 && \
-    wget -qO- https://ftp.mozilla.org/pub/firefox/releases/52.9.0esr/linux-x86_64/en-US/firefox-52.9.0esr.tar.bz2 \
-    | tar -xj -C /home/docker/firefox52 --strip-components=1
+#RUN mkdir -p /home/docker/firefox45 && \
+#    wget -qO- https://ftp.mozilla.org/pub/firefox/releases/52.9.0esr/linux-x86_64/en-US/firefox-52.9.0esr.tar.bz2 \
+#    | tar -xj -C /home/docker/firefox45 --strip-components=1
+
+# Download and install Firefox 52 ESR manually
+RUN mkdir -p /home/docker/firefox45 && \
+    wget -qO- https://ftp.mozilla.org/pub/firefox/releases/45.9.0esr/linux-x86_64/en-US/firefox-45.9.0esr.tar.bz2 \
+    | tar -xj -C /home/docker/firefox45 --strip-components=1
 
 # Set USER env var for VNC
 ENV USER=docker
 
 # Set PATH to use our Firefox build
-ENV PATH="/home/docker/firefox52:${PATH}"
+ENV PATH="/home/docker/firefox45:${PATH}"
 
 # Copy Oracle JRE tarball into image
 COPY jdk-8u202-linux-x64.tar.gz /tmp/

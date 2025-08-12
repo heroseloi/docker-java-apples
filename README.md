@@ -31,6 +31,12 @@ localhost:5901
 
 Please ensure that the websites or network mask you wish to access are added to the file **java_config/exception.sites** prior to building it.
 
+Wepages used for testing:
+
+https://www.math.uh.edu/mathonline/JavaTest/JavaTestPage.htm
+https://www.w3.org/People/mimasa/test/object/java/
+
+
 ## Features
 - Ubuntu 18.04 base  
 - XFCE lightweight desktop  

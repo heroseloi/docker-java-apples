@@ -27,6 +27,10 @@ localhost:5901
 
 **Password: docker**
 
+**Important:**
+
+Please ensure that the websites or network mask you wish to access are added to the file **java_config/exception.sites** prior to building it.
+
 ## Features
 - Ubuntu 18.04 base  
 - XFCE lightweight desktop  

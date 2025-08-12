@@ -9,6 +9,10 @@ This project makes it easy to access old-school Java-based tools like **IPMI**, 
 ![Legacy Java Applet in Firefox 45 ESR](screenshot.png)
 -
 
+<table><tr><td>
+    <img src="screenshot.png" />
+</td></tr></table>
+
 ## Quick Start
 
 You can get up and running with just a few commands:

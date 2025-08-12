@@ -44,12 +44,7 @@ RUN mkdir -p /home/docker/.vnc && \
     echo '\nstartxfce4 &' >> /home/docker/.vnc/xstartup && \
     chmod +x /home/docker/.vnc/xstartup
 
-# Download and install Firefox 52 ESR manually
-#RUN mkdir -p /home/docker/firefox45 && \
-#    wget -qO- https://ftp.mozilla.org/pub/firefox/releases/52.9.0esr/linux-x86_64/en-US/firefox-52.9.0esr.tar.bz2 \
-#    | tar -xj -C /home/docker/firefox45 --strip-components=1
-
-# Download and install Firefox 52 ESR manually
+# Download and install Firefox 45 ESR manually
 RUN mkdir -p /home/docker/firefox45 && \
     wget -qO- https://ftp.mozilla.org/pub/firefox/releases/45.9.0esr/linux-x86_64/en-US/firefox-45.9.0esr.tar.bz2 \
     | tar -xj -C /home/docker/firefox45 --strip-components=1

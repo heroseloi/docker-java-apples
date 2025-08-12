@@ -1,12 +1,12 @@
 # Docker Java Applets (Legacy Access)
 
-A lightweight Docker container with XFCE, VNC, Firefox 52 ESR, and Java plugin support for running legacy Java applets.
+A lightweight Docker container with XFCE, VNC, Firefox 45 ESR, and Java plugin support for running legacy Java applets.
 
-This project makes it easy to access old-school Java-based tools like **IPMI**, **iDRAC**, and other remote KVM consoles. It runs an Ubuntu 18.04 desktop with Firefox 52 ESR (the last version to support NPAPI plugins) and Java 8, all inside a VNC-accessible container — so you don’t have to mess with your host setup.
+This project makes it easy to access old-school Java-based tools like **IPMI**, **iDRAC**, and other remote KVM consoles. It runs an Ubuntu 18.04 desktop with Firefox 45 ESR (the last version to support NPAPI plugins) and Java 8, all inside a VNC-accessible container — so you don’t have to mess with your host setup.
 
 ## Screenshot
 
-![Legacy Java Applet in Firefox 52 ESR](screenshot.png)
+![Legacy Java Applet in Firefox 45 ESR](screenshot.png)
 
 ## Quick Start
 
@@ -31,11 +31,11 @@ localhost:5901
 - Ubuntu 18.04 base  
 - XFCE lightweight desktop  
 - VNC server for remote GUI access  
-- Firefox 52 ESR with NPAPI support  
+- Firefox 45 ESR with NPAPI support  
 - Java 8 with browser plugin (`libnpjp2.so`)  
 - Custom desktop shortcut for easy access
 
 ## Notes
 - Designed mainly for legacy tools like KVM/IPMI/iDRAC consoles that still use Java applets.
-- Uses Firefox 52 ESR – the last version with full Java NPAPI plugin support.
+- Uses Firefox 45 ESR – the last version with full Java NPAPI plugin support.
 - Tested on macOS with Docker Desktop and RealVNC client.

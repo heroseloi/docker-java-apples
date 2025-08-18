@@ -12,7 +12,7 @@ docker stop java-applet-container && docker rm java-applet-container
 	then
 	curl -s -O https://mirrors.huaweicloud.com/java/jdk/8u202-b08/jdk-8u202-linux-x64.tar.gz
 
-		if [$? != 0 ]
+		if [ $? != 0 ]
 		then
 		echo "Download error. Make sure you download jdk-8u202-linux-x64.tar.gz"
 		exit 1	
